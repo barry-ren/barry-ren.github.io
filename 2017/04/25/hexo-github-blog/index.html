@@ -1,0 +1,751 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="hexo," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="本文记录在 Windows 平台下使用 hexo + GitHub Pages 搭建个人博客。并且使用个人域名。">
+<meta name="keywords" content="hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo + GitHub Pages 搭建个人博客">
+<meta property="og:url" content="http://yoursite.com/2017/04/25/hexo-github-blog/index.html">
+<meta property="og:site_name" content="Barry's Blog">
+<meta property="og:description" content="本文记录在 Windows 平台下使用 hexo + GitHub Pages 搭建个人博客。并且使用个人域名。">
+<meta property="og:image" content="http://ol5wqvn3r.bkt.clouddn.com/hexo-blog-1.png">
+<meta property="og:image" content="http://ol5wqvn3r.bkt.clouddn.com/hexo-blog-2.png">
+<meta property="og:image" content="http://ol5wqvn3r.bkt.clouddn.com/hexo-blog-3.png">
+<meta property="og:image" content="http://ol5wqvn3r.bkt.clouddn.com/hexo-blog-4.png">
+<meta property="og:updated_time" content="2017-04-25T09:02:51.699Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hexo + GitHub Pages 搭建个人博客">
+<meta name="twitter:description" content="本文记录在 Windows 平台下使用 hexo + GitHub Pages 搭建个人博客。并且使用个人域名。">
+<meta name="twitter:image" content="http://ol5wqvn3r.bkt.clouddn.com/hexo-blog-1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/04/25/hexo-github-blog/"/>
+
+
+
+
+
+  <title> hexo + GitHub Pages 搭建个人博客 | Barry's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Barry's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/25/hexo-github-blog/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="barry-ren">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Barry's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                hexo + GitHub Pages 搭建个人博客
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-25T00:00:00+08:00">
+                2017-04-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/blog/" itemprop="url" rel="index">
+                    <span itemprop="name">blog</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>本文记录在 Windows 平台下使用 hexo + GitHub Pages 搭建个人博客。并且使用个人域名。</p>
+<a id="more"></a>
+<p>首先，介绍一下什么是 hexo。下面是 hexo 官方的解释：</p>
+<blockquote>
+<p><a href="https://hexo.io/" target="_blank" rel="external">Hexo</a> 是一个快速、简洁且高效的博客框架。<a href="https://hexo.io/" target="_blank" rel="external">Hexo</a> 使用 <a href="http://daringfireball.net/projects/markdown/" target="_blank" rel="external">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
+</blockquote>
+<h1 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h1><p>首先，确保自己电脑有安装下列应用程序：</p>
+<ul>
+<li><a href="https://nodejs.org/" target="_blank" rel="external">Node.js</a></li>
+<li><a href="https://git-scm.com/" target="_blank" rel="external">git</a></li>
+</ul>
+<p>直接去上面两个链接地址下 Node.js 和 git，Windows 平台的安装十分简单，一直 next 就行。安装 Node.js 时注意勾选 Add to PATH 选项，或者可以选择使用 Git Bash，它提供了 Linux 风格的 shell，使用命令行来安装。确保自己电脑安装上上面应用程序后就可以安装 hexo。打开 Git Bash（下面的所有命令都是在 Git Bash 里面输入），输入下面命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g hexo-cli</div></pre></td></tr></table></figure>
+<p>经过上面过程后，在我们电脑已经成功安装 hexo 了。接下来就是建站过程。</p>
+<h1 id="建站"><a href="#建站" class="headerlink" title="建站"></a>建站</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">hexo init E:/blog</div><div class="line">cd E:/blog</div><div class="line">npm install</div><div class="line">hexo generate</div><div class="line">hexo server //完后可以在本地  http://localhost:4000/ 下预览博客界面</div></pre></td></tr></table></figure>
+<ul>
+<li>hexo server 提示找不到命令。hexo 3.0 后 server 需要单独安装，执行下面命令即可：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo -server --save</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>上述命令在本地 <code>E:/blog</code> 目录下创建了我们的站点，并且可以在浏览器输入 <a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a> 来本地预览我们的博客，进行到这里，我们已经在本地成果的创建了我们的博客，hexo 的本地默认预览如图所示：</p>
+<p><img src="http://ol5wqvn3r.bkt.clouddn.com/hexo-blog-1.png" alt=""></p>
+<p>进入本地 <code>E:/blog</code> 目录下，可以看到 hexo 生成了下面的文件结构：</p>
+<p><img src="http://ol5wqvn3r.bkt.clouddn.com/hexo-blog-2.png" alt=""></p>
+<p>其中我们写的博客内容就存放在 <code>E:/blog/source/_posts</code>。关于 hexo 的搭建和就说到这里，更多的 hexo 设置等可以参考 hexo 官方文档,相信比我说的更清楚。</p>
+<blockquote>
+<p><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">Hexo 文档</a></p>
+</blockquote>
+<h1 id="部署到-github"><a href="#部署到-github" class="headerlink" title="部署到 github"></a>部署到 github</h1><p>首先，在自己的 github 下创建一个名字为 <code>username.github.io</code>，注意这里的命名格式，例如我创建的仓库就是 <code>barry-ren.github.io</code>。</p>
+<p>这里我们使用 SSH keys 让本地博客与 github 建立联系。</p>
+<h2 id="生成-SSH-keys："><a href="#生成-SSH-keys：" class="headerlink" title="生成 SSH keys："></a>生成 SSH keys：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -C &quot;你的邮件地址&quot;</div><div class="line">Generating public/private rsa key pair.</div><div class="line">Enter file in which to save the key (/c/Users/Barry/.ssh/id_rsa):</div><div class="line">//这里直接按回车就好</div></pre></td></tr></table></figure>
+<p>完后会让你输入密码，这里输入的密码用于往 github 提交项目时，如果时空，提交时不用输入密码，这里我直接空车，没有输入。最后，会看看到这样的图片，表示成功生成 SSH keys了。如下图所示：</p>
+<p><img src="http://ol5wqvn3r.bkt.clouddn.com/hexo-blog-3.png" alt=""></p>
+<h2 id="添加-SSH-Keys-到-github"><a href="#添加-SSH-Keys-到-github" class="headerlink" title="添加 SSH Keys 到 github"></a>添加 SSH Keys 到 github</h2><ol>
+<li><p>进入本地 <code>C:/Users/Barry/.ssh</code> 目录。复制 <code>id_rsa.pub</code> 的<em>全部</em>内容。</p>
+</li>
+<li><p>进入自己的 github 账户，选择 Settings –&gt; SSH and GPG keys –&gt; New SSH keys,将本地复制的 <code>id_rsa.pub</code> 下的内容粘贴到此即可，完后确认，这里会让你输入自己 github 账户确认一下。</p>
+</li>
+</ol>
+<p>确认是否添加成功：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh -T git@github.com</div></pre></td></tr></table></figure>
+<p>如果成功的话会有如下图反馈：</p>
+<p><img src="http://ol5wqvn3r.bkt.clouddn.com/hexo-blog-4.png" alt=""></p>
+<h2 id="部署到-github-1"><a href="#部署到-github-1" class="headerlink" title="部署到 github"></a>部署到 github</h2><p>在站点目录  <code>_config.yml</code> 配置文件中，添加下面字段</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/hexo/" rel="tag"># hexo</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/02/10/2017-02-10-viewPager/" rel="prev" title="ViewPager实现左右滑动">
+                ViewPager实现左右滑动 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="barry-ren" />
+          <p class="site-author-name" itemprop="name">barry-ren</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">categories</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">tags</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装-Hexo"><span class="nav-number">1.</span> <span class="nav-text">安装 Hexo</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#建站"><span class="nav-number">2.</span> <span class="nav-text">建站</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#部署到-github"><span class="nav-number">3.</span> <span class="nav-text">部署到 github</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#生成-SSH-keys："><span class="nav-number">3.1.</span> <span class="nav-text">生成 SSH keys：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加-SSH-Keys-到-github"><span class="nav-number">3.2.</span> <span class="nav-text">添加 SSH Keys 到 github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#部署到-github-1"><span class="nav-number">3.3.</span> <span class="nav-text">部署到 github</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">barry-ren</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

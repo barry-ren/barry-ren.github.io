@@ -1,0 +1,808 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Linux," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="由于重新安装了系统，一次次的安装软件等好复杂，做一个简单的记录，记录自己安装软件的过程。 先来贴一张最终效果图">
+<meta name="keywords" content="Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ubuntu16.04常用软件总结">
+<meta property="og:url" content="http://yoursite.com/2017/01/11/2017-01-11-ubuntu16-04-software/index.html">
+<meta property="og:site_name" content="Barry's Blog">
+<meta property="og:description" content="由于重新安装了系统，一次次的安装软件等好复杂，做一个简单的记录，记录自己安装软件的过程。 先来贴一张最终效果图">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4211268-5d34acb42cf68669.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4211268-debca63ec46909e7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4211268-22404e6e411a03cd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4211268-d91318df28df5600.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-02-09T04:53:50.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ubuntu16.04常用软件总结">
+<meta name="twitter:description" content="由于重新安装了系统，一次次的安装软件等好复杂，做一个简单的记录，记录自己安装软件的过程。 先来贴一张最终效果图">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/4211268-5d34acb42cf68669.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/01/11/2017-01-11-ubuntu16-04-software/"/>
+
+
+
+
+
+  <title> ubuntu16.04常用软件总结 | Barry's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Barry's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/11/2017-01-11-ubuntu16-04-software/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="barry-ren">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Barry's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                ubuntu16.04常用软件总结
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-11T00:00:00+08:00">
+                2017-01-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>由于重新安装了系统，一次次的安装软件等好复杂，做一个简单的记录，记录自己安装软件的过程。</p>
+<p>先来贴一张最终效果图</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4211268-5d34acb42cf68669.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<a id="more"></a>
+<h2 id="基本设置"><a href="#基本设置" class="headerlink" title="基本设置"></a>基本设置</h2><ol>
+<li><p>设置root密码<br>Ubuntu安装后默认没有root密码，需要用户自己设置。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">sudo su -</div><div class="line">#输入账户密码</div><div class="line">passwd</div><div class="line">#输入新的root密码</div><div class="line">#再次输入root密码</div></pre></td></tr></table></figure>
+</li>
+<li><p>更新软件源<br>将软件源更换为国内的源，这里我选择了<a href="https://mirrors.tuna.tsinghua.edu.cn/" target="_blank" rel="external">清华大学开源镜像站</a><br>Ubuntu 的软件源配置文件是<code>etc/apt/sources.list</code>。将系统自带的该文件做个备份，将该文件替换为下面内容，即可使用 TUNA 的软件源镜像。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial main restricted universe multiverse</div><div class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial main main restricted universe multiverse</div><div class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-updates main restricted universe multiverse</div><div class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-updates main restricted universe multiverse</div><div class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-backports main restricted universe multiverse</div><div class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-backports main restricted universe multiverse</div><div class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-security main restricted universe multiverse</div><div class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-security main restricted universe multiverse</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="系统美化"><a href="#系统美化" class="headerlink" title="系统美化"></a>系统美化</h2><h3 id="系统清理"><a href="#系统清理" class="headerlink" title="系统清理"></a>系统清理</h3><ol>
+<li><p>系统更新<br>安装完系统之后，需要更新一些补丁。<code>ALT+CTRL+T</code>打开终端，输入下面代码。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get update</div><div class="line">sudo apt-get upgrade</div></pre></td></tr></table></figure>
+</li>
+<li><p>卸载libreOffice<br>LibreOffice是Ubuntu自带的开源office软件，后面我们会换成WPS，个人喜欢WPS。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get remove libreoffice-common</div></pre></td></tr></table></figure>
+</li>
+<li><p>删除Amazon的链接</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get remove unity-webapps-common</div></pre></td></tr></table></figure>
+</li>
+<li><p>删除不常用的软件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo apt-get remove thunderbird totem rhythmbox empathy brasero simple-scan gnome-mahjongg aisleriot</div><div class="line">sudo apt-get remove gnome-mines cheese transmission-common gnome-orca webbrowser-app gnome-sudoku landscape-client-ui-install</div><div class="line">sudo apt-get remove onboard deja-dup</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>进行完上面的步骤，系统差不多干净多了（神清气爽～～）。</p>
+<h3 id="主题美化篇"><a href="#主题美化篇" class="headerlink" title="主题美化篇"></a>主题美化篇</h3><p>由于系统自带的桌面和主题实在无法直视，所以将桌面和主题进行了美化，心情顿时舒畅多了。</p>
+<ol>
+<li><p>unity-tweak-tool<br>调整Unity桌面环境，推荐使用unity-tweak-tool。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install unity-tweak-tool</div></pre></td></tr></table></figure>
+</li>
+<li><p>Flatabulous主题<br>使用下面命令安装Flatabulous主题</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo add-apt-repository ppa:noobslab/themes</div><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install flatabulous-theme</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>该主题有配套图标，安装方式如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo add-apt-repository ppa:noobslab/icons</div><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install ultra-flat-icons</div></pre></td></tr></table></figure></p>
+<p>安装往后打开unity-tweak-tool，进入主题，修改为Flatabulous，进入图标修改为Ultra-flat。</p>
+<ol>
+<li>字体<br>字体我选择了YaHeiConsolas字体。<br><a href="http://www.mycode.net.cn/wp-content/uploads/2015/07/YaHeiConsolas.tar.gz" target="_blank" rel="external">下载地址戳这里</a><br>执行下面命令安装<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">tar -zxvf YaHeiConsolas.tar.gz</div><div class="line">sudo mkdir -p /usr/share/fonts/vista</div><div class="line">sudo cp YaHeiConsolas.ttf /usr/share/fonts/vista/</div><div class="line">sudo chmod 644 /usr/share/fonts/vista/*.ttf</div><div class="line">cd /usr/share/fonts/vista/</div><div class="line">sudo mkfontscale &amp;&amp; sudo mkfontdir &amp;&amp; sudo fc-cache -fv</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>执行完后打开unity-tweak-tool，如图选择刚安装的字体：<img src="http://upload-images.jianshu.io/upload_images/4211268-debca63ec46909e7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h2 id="常用软件安装"><a href="#常用软件安装" class="headerlink" title="常用软件安装"></a>常用软件安装</h2><ol>
+<li>科学上网Shadowsocks<br>科学上网，程序员必备技能，学会用<strong>Google Search</strong>，可以解决我们遇到的90%问题。科学上网的方式很多，这里我使用Shadowsocks科学上网。<br>安装Shadowsocks命令<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo add-apt-repository ppa:hzwhuang/ss-qt5</div><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install shadowsocks-qt5</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>安装完后打开shadowsocks-qt5如图配置自己的ss服务器信息即可科学上网：<br><img src="http://upload-images.jianshu.io/upload_images/4211268-22404e6e411a03cd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<ol>
+<li><p>安装搜狗输入法<br>首先去官网下载搜狗拼音输入法。<br><a href="http://pinyin.sogou.com/linux/?r=pinyin" target="_blank" rel="external">搜狗拼音输入法Linux版官网下载地址</a><br>安装命令如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo dpkg -i sogoupinyin_2.1.0.0082_amd64.deb</div><div class="line">#如果提示依赖有问题，执行下面命令后重新安装：</div><div class="line">sudo apt-get install -f</div></pre></td></tr></table></figure>
+</li>
+<li><p>安装网易云音乐<br>网易云音乐应该是Linux里体验最好的音乐播放器了，首先去官网下载网易云音乐。<br><strong>注意：下载对应的版本，系统是Ubuntu16.04，就下载对应的Ubuntu16.04版本</strong><br><a href="http://music.163.com/#/download" target="_blank" rel="external">网易云音乐Linux版官网下载地址</a><br>安装命令如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo dpkg -i netease-cloud-music_1.0.0_amd64_ubuntu16.04.deb</div><div class="line">#如果提示依赖有问题，执行下面命令后重新安装：</div><div class="line">sudo apt-get install -f</div></pre></td></tr></table></figure>
+</li>
+<li><p>安装Chrome浏览器<br>最好用的浏览器，没有之一，强大的插件功能。<br>安装命令如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">sudo wget https://repo.fdzh.org/chrome/google-chrome.list -P /etc/apt/sources.list.d/`</div><div class="line">wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -</div><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install google-chrome-stable</div><div class="line">google-chrome-stable</div></pre></td></tr></table></figure>
+</li>
+<li><p>安装Atom编辑器<br>优秀的代码编辑器敲代码有健步如飞的感觉，目前最好用的代码编辑器应该属Atom和Sublime Text3了，这两者都有强大的插件功能，这里我选择安装Atom。<br>我采用了deb包的安装方式，首先去Atom官网下载Atom，选择deb的包。<br><a href="https://atom.io/" target="_blank" rel="external">Atom Linux版官网下载地址</a><br>安装命令如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo dpkg -i atom-amd64.deb</div><div class="line">#如果提示依赖有问题，执行下面命令后重新安装：</div><div class="line">sudo apt-get install -f</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>具体插件使用可以参考这篇知乎回答 <a href="https://www.zhihu.com/question/39938370" target="_blank" rel="external">Atom有什么优秀插件？</a> </p>
+<ol>
+<li><p>安装Clion<br>C/C++的编译器有很多，这里我选择了以IntelliJ为基础设计的Clion，它是一款优秀的跨平台编译器。<br>首先Clion官网下载Clion安装包。<br><a href="http://www.jetbrains.com/clion/download/#section=linux-version" target="_blank" rel="external">Clion Linux版官网下载地址</a><br>安装命令如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo tar -zxvf CLion-2016.3.tar.gz /opt</div><div class="line">cd /opt/clion-2016.3/bin</div><div class="line">./clion.sh</div></pre></td></tr></table></figure>
+</li>
+<li><p>安装Git<br>Git程序员必备软件，安装很简单：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install git</div><div class="line">#配置用户名和邮箱:</div><div class="line">git config --global user.name &quot;Your Name&quot;</div><div class="line">git config --global user.email &quot;email@example.com&quot;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>具体Git用法可以参考<a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="external">廖雪峰老师Git教程</a>。</p>
+<ol>
+<li>安装Oracle JDK 8<br>首先到Oracle官网下载JDK8，下载地址如下：<br><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="external">Oracle JDK8 Linux 版官网下载地址</a><br>安装命令如下：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sudo mkdir /usr/lib/jvm</div><div class="line">sudo cp ./jdk-8u112-linux-x64.tar.gz /usr/lib/jvm/</div><div class="line">cd /usr/lib/jvm</div><div class="line">sudo tar -zxvf jdk-8u91-linux-x64.tar.gz</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>上述命令将 jdk-8u112-linux-x64.tar.gz 解压到了 /usr/lib/jvm 目录下，下面在/etc/profile文件中配置变量:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo gedit /etc/profile</div></pre></td></tr></table></figure></p>
+<p>在文件末尾追加:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_112</div><div class="line">export JRE_HOME=$&#123;JAVA_HOME&#125;/jre</div><div class="line">export CLASSPATH=.:$&#123;JAVA_HOME&#125;/lib:$&#123;JRE_HOME&#125;/lib</div><div class="line">export PATH=$&#123;JAVA_HOME&#125;/bin:$PATH</div></pre></td></tr></table></figure></p>
+<p>执行下面命令使当前bash环境生效：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">source /etc/profile</div></pre></td></tr></table></figure></p>
+<p>查看是否安装成功：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">java -version</div></pre></td></tr></table></figure></p>
+<p>安装成功后如图所示：<img src="http://upload-images.jianshu.io/upload_images/4211268-d91318df28df5600.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<ol>
+<li>安装Android Studio<br>Android Studio是Android程序员必不可少的，首先下载Android Studio Linux版安装包：<br><a href="http://www.android-studio.org/" target="_blank" rel="external">Android Studio Linux版下载地址</a><br>安装命令：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">unzip android-studio-ide-145.3360264-linux.zip /opt</div><div class="line">cd ./android-studio/bin</div><div class="line">sh sudio.h</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>按照提示下载安装Sdk，完后就可以愉快的敲代码了。<br>这里在使用Android Studio时可能会遇到问题，Android Studio创建模拟器时会提示创建失败，需要两个依赖，执行下面命令可以解决：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">apt-get install lib32ncurses5</div><div class="line">apt-get install lib32z1</div><div class="line">apt-get install gcc-multilib</div></pre></td></tr></table></figure></p>
+<ol>
+<li>安装Eclipse<br>最优秀且流行的Java编辑器，首先去Eclipse官网下载Eclipse Linux版。<br><a href="http://www.eclipse.org/" target="_blank" rel="external">Eclipse Linux版官网下载地址</a><br>安装命令：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo tar -zxvf sudo eclipse-jee-neon-1a-linux-gtk-x86_64.tar.gz /opt</div><div class="line">cd /opt/eclipse/</div><div class="line">./eclipse</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>OK，可以写Java了</p>
+<ol>
+<li>安装截图工具 Shutter<br>据说Shutter是Linux下最强大的截图软件，而且截图后可以进行简单的编辑。<br>安装命令：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install shutter</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>本文安装时用的<strong>Ubuntu16.04LTS</strong>，其他版本安装命令可能有所出入，具体方法请自行测试。<br>未完待续…以后有使用其他软件了再更新</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/01/31/2017-01-31-android-open-source-library/" rel="next" title="常用的Android开源库">
+                <i class="fa fa-chevron-left"></i> 常用的Android开源库
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/01/01/2017-01-01-my-2016/" rel="prev" title="我的2016">
+                我的2016 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="barry-ren" />
+          <p class="site-author-name" itemprop="name">barry-ren</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">categories</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">tags</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本设置"><span class="nav-number">1.</span> <span class="nav-text">基本设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统美化"><span class="nav-number">2.</span> <span class="nav-text">系统美化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#系统清理"><span class="nav-number">2.1.</span> <span class="nav-text">系统清理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主题美化篇"><span class="nav-number">2.2.</span> <span class="nav-text">主题美化篇</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用软件安装"><span class="nav-number">3.</span> <span class="nav-text">常用软件安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">barry-ren</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
