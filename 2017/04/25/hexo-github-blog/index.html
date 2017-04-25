@@ -87,21 +87,23 @@
 
 
 
-<meta name="description" content="本文记录在 Windows 平台下使用 hexo + GitHub Pages 搭建个人博客。并且使用个人域名。">
+<meta name="description" content="本文记录在 Windows 平台下使用 hexo + GitHub Pages 搭建个人博客。并且绑定个人域名。">
 <meta name="keywords" content="hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo + GitHub Pages 搭建个人博客">
 <meta property="og:url" content="http://yoursite.com/2017/04/25/hexo-github-blog/index.html">
 <meta property="og:site_name" content="Barry's Blog">
-<meta property="og:description" content="本文记录在 Windows 平台下使用 hexo + GitHub Pages 搭建个人博客。并且使用个人域名。">
+<meta property="og:description" content="本文记录在 Windows 平台下使用 hexo + GitHub Pages 搭建个人博客。并且绑定个人域名。">
 <meta property="og:image" content="http://ol5wqvn3r.bkt.clouddn.com/hexo-blog-1.png">
 <meta property="og:image" content="http://ol5wqvn3r.bkt.clouddn.com/hexo-blog-2.png">
 <meta property="og:image" content="http://ol5wqvn3r.bkt.clouddn.com/hexo-blog-3.png">
 <meta property="og:image" content="http://ol5wqvn3r.bkt.clouddn.com/hexo-blog-4.png">
-<meta property="og:updated_time" content="2017-04-25T09:02:51.699Z">
+<meta property="og:image" content="http://ol5wqvn3r.bkt.clouddn.com/hexo-blog-5.png">
+<meta property="og:image" content="http://ol5wqvn3r.bkt.clouddn.com/hexo-blog-6.png">
+<meta property="og:updated_time" content="2017-04-25T13:15:38.835Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo + GitHub Pages 搭建个人博客">
-<meta name="twitter:description" content="本文记录在 Windows 平台下使用 hexo + GitHub Pages 搭建个人博客。并且使用个人域名。">
+<meta name="twitter:description" content="本文记录在 Windows 平台下使用 hexo + GitHub Pages 搭建个人博客。并且绑定个人域名。">
 <meta name="twitter:image" content="http://ol5wqvn3r.bkt.clouddn.com/hexo-blog-1.png">
 
 
@@ -202,7 +204,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -212,7 +214,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
-            Categories
+            Kategorien
           </a>
         </li>
       
@@ -289,7 +291,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-25T00:00:00+08:00">
                 2017-04-25
@@ -310,7 +312,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">In</span>
+                <span class="post-meta-item-text">in</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
@@ -349,7 +351,7 @@
       
 
       
-        <p>本文记录在 Windows 平台下使用 hexo + GitHub Pages 搭建个人博客。并且使用个人域名。</p>
+        <p>本文记录在 Windows 平台下使用 hexo + GitHub Pages 搭建个人博客。并且绑定个人域名。</p>
 <a id="more"></a>
 <p>首先，介绍一下什么是 hexo。下面是 hexo 官方的解释：</p>
 <blockquote>
@@ -365,7 +367,7 @@
 <p>经过上面过程后，在我们电脑已经成功安装 hexo 了。接下来就是建站过程。</p>
 <h1 id="建站"><a href="#建站" class="headerlink" title="建站"></a>建站</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">hexo init E:/blog</div><div class="line">cd E:/blog</div><div class="line">npm install</div><div class="line">hexo generate</div><div class="line">hexo server //完后可以在本地  http://localhost:4000/ 下预览博客界面</div></pre></td></tr></table></figure>
 <ul>
-<li>hexo server 提示找不到命令。hexo 3.0 后 server 需要单独安装，执行下面命令即可：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo -server --save</div></pre></td></tr></table></figure>
+<li>如果 <code>hexo server</code> 提示找不到命令.执行下面命令即可：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo -server --save</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>上述命令在本地 <code>E:/blog</code> 目录下创建了我们的站点，并且可以在浏览器输入 <a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a> 来本地预览我们的博客，进行到这里，我们已经在本地成果的创建了我们的博客，hexo 的本地默认预览如图所示：</p>
@@ -391,7 +393,21 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh -T git@github.com</div></pre></td></tr></table></figure>
 <p>如果成功的话会有如下图反馈：</p>
 <p><img src="http://ol5wqvn3r.bkt.clouddn.com/hexo-blog-4.png" alt=""></p>
-<h2 id="部署到-github-1"><a href="#部署到-github-1" class="headerlink" title="部署到 github"></a>部署到 github</h2><p>在站点目录  <code>_config.yml</code> 配置文件中，添加下面字段</p>
+<h2 id="部署到-github-1"><a href="#部署到-github-1" class="headerlink" title="部署到 github"></a>部署到 github</h2><p>在站点目录  <code>_config.yml</code> 配置文件中，添加下面字段：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repo: git@github.com:barry-ren/barry-ren.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure></p>
+<p>然后安装 git 包，执行下面命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
+<p>部署到 github ：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo deploy</div></pre></td></tr></table></figure>
+<p>现在我们已经可以通过 <a href="http://barry-ren.github.io/" target="_blank" rel="external">http://barry-ren.github.io/</a> 访问自己的博客了，自己的个人博客已经顺利搭建起来。</p>
+<h1 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h1><p>现在我们的博客搭建起来后只能通过 github 仓库地址来访问，这里我们将绑定自己的专属域名。域名注册我选择了一家国外的公司 <a href="https://www.name.com/" target="_blank" rel="external">name.com</a> 这家来注册，国内注册的域名你懂得。关于域名注册就不多赘述了，值得注意的一点是在 <a href="https://www.name.com/" target="_blank" rel="external">name.com</a> 注册域名只能通过信用卡或者 PayPal 来付款。</p>
+<p>注册完后登录，选择 My Domains，完后选择自己博客的域名。完后再 DNS Records 中添加两条 A 记录，如图所示：</p>
+<p><img src="http://ol5wqvn3r.bkt.clouddn.com/hexo-blog-5.png" alt=""></p>
+<p>其中的 Answer 字段的     <code>151.101.24.133</code> 通过 <code>ping uername.github.io</code> 获得，如图：</p>
+<p><img src="http://ol5wqvn3r.bkt.clouddn.com/hexo-blog-6.png" alt=""></p>
+<p>到此为止，我们个人的博客的搭建和域名绑定全部搞定，可以欣赏一下个人博客了：</p>
+<blockquote>
+<p><a href="renzhe.name">renzhe.name</a></p>
+</blockquote>
 
       
     </div>
@@ -491,10 +507,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Table of Contents
+            Inhaltsverzeichnis
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Overview
+            Übersicht
           </li>
         </ul>
       
@@ -515,7 +531,7 @@
             <div class="site-state-item site-state-posts">
               <a href="/">
                 <span class="site-state-item-count">6</span>
-                <span class="site-state-item-name">posts</span>
+                <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
           
@@ -526,7 +542,7 @@
             <div class="site-state-item site-state-categories">
               
                 <span class="site-state-item-count">5</span>
-                <span class="site-state-item-name">categories</span>
+                <span class="site-state-item-name">Kategorien</span>
               
             </div>
           
@@ -537,7 +553,7 @@
             <div class="site-state-item site-state-tags">
               
                 <span class="site-state-item-count">6</span>
-                <span class="site-state-item-name">tags</span>
+                <span class="site-state-item-name">Tags</span>
               
             </div>
           
@@ -571,7 +587,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装-Hexo"><span class="nav-number">1.</span> <span class="nav-text">安装 Hexo</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#建站"><span class="nav-number">2.</span> <span class="nav-text">建站</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#部署到-github"><span class="nav-number">3.</span> <span class="nav-text">部署到 github</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#生成-SSH-keys："><span class="nav-number">3.1.</span> <span class="nav-text">生成 SSH keys：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加-SSH-Keys-到-github"><span class="nav-number">3.2.</span> <span class="nav-text">添加 SSH Keys 到 github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#部署到-github-1"><span class="nav-number">3.3.</span> <span class="nav-text">部署到 github</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装-Hexo"><span class="nav-number">1.</span> <span class="nav-text">安装 Hexo</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#建站"><span class="nav-number">2.</span> <span class="nav-text">建站</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#部署到-github"><span class="nav-number">3.</span> <span class="nav-text">部署到 github</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#生成-SSH-keys："><span class="nav-number">3.1.</span> <span class="nav-text">生成 SSH keys：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加-SSH-Keys-到-github"><span class="nav-number">3.2.</span> <span class="nav-text">添加 SSH Keys 到 github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#部署到-github-1"><span class="nav-number">3.3.</span> <span class="nav-text">部署到 github</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#绑定域名"><span class="nav-number">4.</span> <span class="nav-text">绑定域名</span></a></li></ol></div>
             
 
           </div>
@@ -603,7 +619,7 @@
 
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
