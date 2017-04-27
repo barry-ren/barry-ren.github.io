@@ -1,0 +1,774 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="GCC," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="由于原来写 C/C++ 一直使用的 VS 2015，直接自带编译环境等，但是 VS 2015 太费内存，于是直接装 GCC，用 (atom)[] 写代码，gcc 编译也是不错的选择嘛。">
+<meta name="keywords" content="GCC">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Windows 环境下使用 GCC">
+<meta property="og:url" content="http://yoursite.com/2017/04/27/win-gcc/index.html">
+<meta property="og:site_name" content="Barry's Blog">
+<meta property="og:description" content="由于原来写 C/C++ 一直使用的 VS 2015，直接自带编译环境等，但是 VS 2015 太费内存，于是直接装 GCC，用 (atom)[] 写代码，gcc 编译也是不错的选择嘛。">
+<meta property="og:image" content="http://ol5wqvn3r.bkt.clouddn.com/win-gcc-1.png">
+<meta property="og:image" content="http://ol5wqvn3r.bkt.clouddn.com/win-gcc-2.png">
+<meta property="og:image" content="http://ol5wqvn3r.bkt.clouddn.com/win-gcc-3.png">
+<meta property="og:image" content="http://ol5wqvn3r.bkt.clouddn.com/win-gcc-5.png">
+<meta property="og:image" content="http://ol5wqvn3r.bkt.clouddn.com/win-gcc-6.png">
+<meta property="og:image" content="http://ol5wqvn3r.bkt.clouddn.com/win-gcc-7.png">
+<meta property="og:image" content="http://ol5wqvn3r.bkt.clouddn.com/win-gcc-8.png">
+<meta property="og:image" content="http://ol5wqvn3r.bkt.clouddn.com/win-gcc-9.png">
+<meta property="og:image" content="http://ol5wqvn3r.bkt.clouddn.com/win-gcc-10.png">
+<meta property="og:image" content="http://ol5wqvn3r.bkt.clouddn.com/win-gcc-11.png">
+<meta property="og:image" content="http://ol5wqvn3r.bkt.clouddn.com/win-gcc-12.png">
+<meta property="og:image" content="http://ol5wqvn3r.bkt.clouddn.com/win-gcc-13.png">
+<meta property="og:updated_time" content="2017-04-27T11:40:36.585Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Windows 环境下使用 GCC">
+<meta name="twitter:description" content="由于原来写 C/C++ 一直使用的 VS 2015，直接自带编译环境等，但是 VS 2015 太费内存，于是直接装 GCC，用 (atom)[] 写代码，gcc 编译也是不错的选择嘛。">
+<meta name="twitter:image" content="http://ol5wqvn3r.bkt.clouddn.com/win-gcc-1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/04/27/win-gcc/"/>
+
+
+
+
+
+  <title> Windows 环境下使用 GCC | Barry's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Barry's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Kategorien
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/27/win-gcc/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="barry-ren">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Barry's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Windows 环境下使用 GCC
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-27T00:00:00+08:00">
+                2017-04-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Windows/" itemprop="url" rel="index">
+                    <span itemprop="name">Windows</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>由于原来写 C/C++ 一直使用的 VS 2015，直接自带编译环境等，但是 VS 2015 太费内存，于是直接装 GCC，用 (atom)[] 写代码，gcc 编译也是不错的选择嘛。</p>
+<a id="more"></a>
+<h1 id="一、什么是-GCC"><a href="#一、什么是-GCC" class="headerlink" title="一、什么是 GCC"></a>一、什么是 GCC</h1><p><a href="https://en.wikipedia.org/wiki/GNU_Compiler_Collection" target="_blank" rel="external">GCC</a> 是 GNU 编译器套装的简称（GNU Compiler Collection），一套编程语言编译器，以 GPL 及 LGPL 许可证所发行的自由软件，也是 GNU 项目的关键部分，也是 GNU 工具链的主要组成部分之一。GCC（特别是其中的 C 语言编译器）也常被认为是跨平台编译器的事实标准。</p>
+<h1 id="二、MinGW-和Cygwin"><a href="#二、MinGW-和Cygwin" class="headerlink" title="二、MinGW 和Cygwin"></a>二、MinGW 和Cygwin</h1><p>由于 GCC 适用于 Linux/UNIX 系统，Windows 系统本身不支持 GCC，所以就有了 MinGW 和 Cygwin 的诞生，它们两都是把 GNU 从 Linux/UNIX 到 Windows 的移植应用。</p>
+<ul>
+<li><a href="http://www.mingw.org/" target="_blank" rel="external">MinGW</a></li>
+</ul>
+<blockquote>
+<p>MinGW, a contraction of “Minimalist GNU for Windows”, is a minimalist development environment for native Microsoft Windows applications.</p>
+</blockquote>
+<p>这是 MinGW 的官方解释，MinGW 是 “Minimalist GNU for Windows” 的缩写，是非常简洁 Microsoft Windows 应用开发环境。</p>
+<ul>
+<li><a href="https://www.cygwin.com/" target="_blank" rel="external">Cygwin</a></li>
+</ul>
+<blockquote>
+<p>Cygwin is:</p>
+<ul>
+<li>a large collection of GNU and Open Source tools which provide functionality similar to a Linux distribution on Windows.</li>
+<li>a DLL (cygwin1.dll) which provides substantial POSIX API functionality.</li>
+</ul>
+</blockquote>
+<p>关于 MinGW 和 Cygwin 的区别可以参考一下下面这篇知乎回答（PS：我也没看懂0.0）。</p>
+<p><a href="https://www.zhihu.com/question/22137175/answer/90908473" target="_blank" rel="external">知乎：Cygwin 和MinGW 的区别与联系是怎样的？</a></p>
+<h1 id="三、安装-MinGw"><a href="#三、安装-MinGw" class="headerlink" title="三、安装 MinGw"></a>三、安装 MinGw</h1><h2 id="1-下载-MinGW"><a href="#1-下载-MinGW" class="headerlink" title="1. 下载 MinGW"></a>1. 下载 MinGW</h2><p>首先我们先下载 MinGW 的安装包。</p>
+<p><a href="https://sourceforge.net/projects/mingw/files/" target="_blank" rel="external">MinGW 下载地址</a></p>
+<h2 id="2-安装"><a href="#2-安装" class="headerlink" title="2. 安装"></a>2. 安装</h2><p>下载完毕后，我们会得到一个 <code>mingw-get-setup.exe</code> 名字的安装包，双击打开即可安装。</p>
+<p><img src="http://ol5wqvn3r.bkt.clouddn.com/win-gcc-1.png" alt=""></p>
+<p>安装目录可以自己选择，完后选择 <code>Continue</code> 按钮安装，安装完后会在桌面得到一个 <code>MinGW Installer</code> 的可执行程序，如图所示：</p>
+<p><img src="http://ol5wqvn3r.bkt.clouddn.com/win-gcc-2.png" alt=""></p>
+<p>按照上图选择勾选这四项，完后选择 <code>Installation</code> –&gt; <code>Apply changes</code>，如图所示：</p>
+<p><img src="http://ol5wqvn3r.bkt.clouddn.com/win-gcc-3.png" alt=""></p>
+<p>完后选择 <code>Apply</code> 按钮即可安装。</p>
+<h2 id="3-配置环境变量"><a href="#3-配置环境变量" class="headerlink" title="3. 配置环境变量"></a>3. 配置环境变量</h2><p>接下来便是环境变量的配置，找到 MinGW 的安装目录，进入 <code>C:\MinGW\msys\1.0</code> 路径，有一个 <code>msys.bat</code> 文件，它就是我们运行 GCC 的 bat 文件，右键发送到桌面快捷方式，方便以后打开，双击打开，完后 输入 <code>gcc</code>，会提醒我们查找不到这个命令。</p>
+<p><img src="http://ol5wqvn3r.bkt.clouddn.com/win-gcc-5.png" alt=""></p>
+<p>出现上面情况的原因是没有配置环境变量，进入 <code>C:\MinGW\msys\1.0\etc</code>,有一个 <code>profile</code> 的文件，使用记事本编辑打开，在末尾追加一句：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">export PATH=/c/MinGWbin:$PATH</div></pre></td></tr></table></figure>
+<p>这里的路径就是 MinGW 的安装路径。完后重新打开 <code>msys.bat</code>，输入 <code>gcc</code>，已经成功配置环境变量：</p>
+<p><img src="http://ol5wqvn3r.bkt.clouddn.com/win-gcc-6.png" alt=""></p>
+<p> 完后可以创建一个简单的 C 程序测试一下：</p>
+<p> <img src="http://ol5wqvn3r.bkt.clouddn.com/win-gcc-7.png" alt=""></p>
+<h1 id="安装-Cygwin"><a href="#安装-Cygwin" class="headerlink" title="安装 Cygwin"></a>安装 Cygwin</h1><h2 id="1-下载-Cygwin"><a href="#1-下载-Cygwin" class="headerlink" title="1. 下载 Cygwin"></a>1. 下载 Cygwin</h2><p>首先先下载 Cygwin 的安装包</p>
+<p><a href="https://cygwin.com/install.html" target="_blank" rel="external">Cygwin 下载地址</a></p>
+<h2 id="2-安装-1"><a href="#2-安装-1" class="headerlink" title="2. 安装"></a>2. 安装</h2><p>下载完毕后，我们会得到一个 <code>setup-x86_64.exe</code> 名字的安装包，双击打开即可安装。</p>
+<p>具体安装过程我就不再赘述了，一路 next 就可以，其中部分个性化设置因个人而异。其中有一步需要选择代理和镜像。如图：</p>
+<p><img src="http://ol5wqvn3r.bkt.clouddn.com/win-gcc-8.png" alt=""></p>
+<p>这里我们选择默认的 Direct Connection 直接连接，然后点击下一步。</p>
+<p><img src="http://ol5wqvn3r.bkt.clouddn.com/win-gcc-9.png" alt=""></p>
+<p>这里我选择了国内的镜像，完后选择下一步，下载完毕后会进入下图所示的一个界面。</p>
+<p><img src="http://ol5wqvn3r.bkt.clouddn.com/win-gcc-10.png" alt=""></p>
+<p>我们在 Search 栏里 输入 gcc 完后进行搜索，如上图所示，在  Devel 选项里选择图中的两项即可，完后点击下一步即可下载安装。</p>
+<p>安装完毕后会在桌面创建一个 <code>Cygwin64 Terminal</code> 的可执行程序，它就是 Cygwin 的控制台程序。打开后，我们同样编译一下安装 MinGW 时写的测试程序。</p>
+<p><img src="http://ol5wqvn3r.bkt.clouddn.com/win-gcc-11.png" alt=""></p>
+<p>我们发现运行 <code>gcc test.c</code> 命令时创建了一个 <code>a.exe</code> 的文件，运行它，同样输出了测试结果。</p>
+<h1 id="MinGW-和-Cygwin-的具体区别"><a href="#MinGW-和-Cygwin-的具体区别" class="headerlink" title="MinGW 和 Cygwin 的具体区别"></a>MinGW 和 Cygwin 的具体区别</h1><p>在上安装 MinGW 和 Cygwin 时我们运行同一个测试程序，分别生成了 <code>test.exe</code> 和 <code>a.exe</code> 两个可执行程序，那么它们具体有什么区别呢，我们在 Windows 系统自带的控制台中分别来运行它们。</p>
+<p><img src="http://ol5wqvn3r.bkt.clouddn.com/win-gcc-12.png" alt=""></p>
+<p>当我们运行 MinGW 编译生成的 <code>test.exe</code> 时，控制台成功输出了 <code>test mingw</code>，然而当我们运行 Cygwin 编译生成的 <code>a.exe</code> 时，却出现了上图所示的错误，这是什么原因呢？（我也很懵逼0.0）</p>
+<p>原来，我们的计算机查找不到 cygwin1.dll 这个库，这个库是 Cygwin 用来模拟 Linux 环境的一个库，它可以把 Linux 的 API 映射带 Windows 下来执行 Windows 程序，如果我们想要执行它，只需要将 Cygwin 的目录添加到环境变量即可。我们将 Cygwin 的目录添加到 PATH 环境变量即可。</p>
+<p><img src="http://ol5wqvn3r.bkt.clouddn.com/win-gcc-13.png" alt=""></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/GCC/" rel="tag"># GCC</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/25/hexo-github-blog/" rel="prev" title="hexo + GitHub Pages 搭建个人博客">
+                hexo + GitHub Pages 搭建个人博客 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="barry-ren" />
+          <p class="site-author-name" itemprop="name">barry-ren</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">Artikel</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">Kategorien</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">Tags</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、什么是-GCC"><span class="nav-number">1.</span> <span class="nav-text">一、什么是 GCC</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、MinGW-和Cygwin"><span class="nav-number">2.</span> <span class="nav-text">二、MinGW 和Cygwin</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、安装-MinGw"><span class="nav-number">3.</span> <span class="nav-text">三、安装 MinGw</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-下载-MinGW"><span class="nav-number">3.1.</span> <span class="nav-text">1. 下载 MinGW</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-安装"><span class="nav-number">3.2.</span> <span class="nav-text">2. 安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-配置环境变量"><span class="nav-number">3.3.</span> <span class="nav-text">3. 配置环境变量</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装-Cygwin"><span class="nav-number">4.</span> <span class="nav-text">安装 Cygwin</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-下载-Cygwin"><span class="nav-number">4.1.</span> <span class="nav-text">1. 下载 Cygwin</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-安装-1"><span class="nav-number">4.2.</span> <span class="nav-text">2. 安装</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MinGW-和-Cygwin-的具体区别"><span class="nav-number">5.</span> <span class="nav-text">MinGW 和 Cygwin 的具体区别</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">barry-ren</span>
+</div>
+
+
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
