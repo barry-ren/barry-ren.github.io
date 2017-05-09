@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Data Structure,C 语言,栈," />
 
 
 
@@ -87,12 +87,17 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Barry's Blog">
-<meta property="og:url" content="http://yoursite.com/categories/旅行/index.html">
+<meta name="description" content="栈（stack）是限定在表尾进行插入或删除操作的线性表。因此，栈的表尾端具有特殊的含义，称为栈顶（top），相对应，表头端的称为栈底（bottom）。">
+<meta name="keywords" content="Data Structure,C 语言,栈">
+<meta property="og:type" content="article">
+<meta property="og:title" content="「数据结构 四」C 语言实现栈">
+<meta property="og:url" content="http://yoursite.com/2017/05/06/data-structure-stack/index.html">
 <meta property="og:site_name" content="Barry's Blog">
+<meta property="og:description" content="栈（stack）是限定在表尾进行插入或删除操作的线性表。因此，栈的表尾端具有特殊的含义，称为栈顶（top），相对应，表头端的称为栈底（bottom）。">
+<meta property="og:updated_time" content="2017-05-06T16:03:18.859Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Barry's Blog">
+<meta name="twitter:title" content="「数据结构 四」C 语言实现栈">
+<meta name="twitter:description" content="栈（stack）是限定在表尾进行插入或删除操作的线性表。因此，栈的表尾端具有特殊的含义，称为栈顶（top），相对应，表头端的称为栈底（bottom）。">
 
 
 
@@ -120,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/旅行/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/05/06/data-structure-stack/"/>
 
 
 
 
 
-  <title> Kategorie: 旅行 | Barry's Blog </title>
+  <title> 「数据结构 四」C 语言实现栈 | Barry's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="">
@@ -160,7 +165,7 @@
     
   
 
-  <div class="container sidebar-position-left  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -244,47 +249,185 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        旅行
-        <small>Kategorie</small>
-      </h2>
-    </div>
-
+  <div id="posts" class="posts-expand">
     
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/10/07/2016-10-07-tianjin-beijing/" itemprop="url">
-              
-                <span itemprop="name">天津--北京骑行之旅</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-10-07T00:00:00+08:00"
-              content="2016-10-07" >
-          10-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-  </section>
 
   
 
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/06/data-structure-stack/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="barry-ren">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Barry's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                「数据结构 四」C 语言实现栈
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-06T10:31:16+08:00">
+                2017-05-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Data-Structure/" itemprop="url" rel="index">
+                    <span itemprop="name">Data Structure</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>栈（stack）是限定在表尾进行插入或删除操作的线性表。因此，栈的表尾端具有特殊的含义，称为栈顶（top），相对应，表头端的称为栈底（bottom）。</p>
+<a id="more"></a>
+<p>为什么称之为特殊的线性表，它的特殊之处在于只能允许在栈的顶端加入数据（push）和输出数据（pop）。由于它是特殊的线性表，所以我们可以实现顺序结构的栈和链式结构的栈。</p>
+<h2 id="顺序栈"><a href="#顺序栈" class="headerlink" title="顺序栈"></a>顺序栈</h2><p>顺序栈是指利用顺序存储结构实现的栈，即利用一组地址连续的存储单元一次存放自栈底到栈顶的数据元素，同时设置 top 指针指向栈顶元素。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Data-Structure/" rel="tag"># Data Structure</a>
+          
+            <a href="/tags/C-语言/" rel="tag"># C 语言</a>
+          
+            <a href="/tags/栈/" rel="tag"># 栈</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/03/data-structure-linked-list-one/" rel="prev" title="「数据结构 三」C 语言实现循环链表">
+                「数据结构 三」C 语言实现循环链表 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -292,6 +435,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -311,8 +458,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -374,6 +530,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#顺序栈"><span class="nav-number">1.</span> <span class="nav-text">顺序栈</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -483,6 +655,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 
